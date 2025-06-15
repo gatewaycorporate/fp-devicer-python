@@ -1,0 +1,43 @@
+[build-system]
+requires = [
+    "setuptools>=61.2.0",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+[project]
+name = "devicer.py"
+version = "0.1.0"
+authors = [
+    {name = "Samuel Roux", email = "sam.roux.com@gmail.com"},
+    {name = "Stephen Perso", email = "stephenrperso@gmail.com"},
+    {name = "One anonymous contributor"}
+]
+description = "Open-Source Python Middleware for Digital Fingerprinting"
+keywords = [
+    "fingerprinting",
+    "identification",
+    "middleware",
+    "tracking"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries"
+]
+dependencies = [
+    "py-tlsh>=4.7.2"
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license-files = [
+    "license.txt"
+]
+[project.urls]
+Homepage = "https://gatewaycorporate.org/"
+Repository = "https://github.com/gatewaycorporate/fp-devicer-python.git"
+Issues = "https://github.com/gatewaycorporate/fp-devicer-python/issues"
