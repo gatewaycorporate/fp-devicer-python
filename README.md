@@ -5,7 +5,7 @@ FP-Devicer is a digital fingerprinting middleware library designed for ease of u
 
 Importing and using the library to compare fingerprints between users is as simple as collecting some user data and running the calculateConfidence function.
 ```python
-from devicer.confidence import calculate_condifence
+from devicer.confidence import calculate_confidence
 
 user1, user2 = {
   """Collected data goes here"""

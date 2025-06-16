@@ -1,2 +1,4 @@
-src/devicer/__pycache__/
-src/devicer/*.pyc
+**/__pycache__/
+**/*.pyc
+**/*.egg-info
+dist/
