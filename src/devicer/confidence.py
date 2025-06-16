@@ -1,4 +1,4 @@
-from hashing import get_tlsh_hash, get_hash_difference
+from .hashing import get_tlsh_hash, get_hash_difference
 import math
 
 def compare_dictionaries(data1: dict, data2: dict) -> tuple[int, int]:
@@ -38,14 +38,12 @@ def calculate_confidence(data1: dict, data2: dict) -> float:
     """
     matches, fields = compare_dictionaries(data1, data2)
     
-    if fields == 0:
-        return 0.0
+    if fields == 0 or matches == 0:
+        return 0
 
     hash1 = get_tlsh_hash(str(data1).encode('utf-8'))
     hash2 = get_tlsh_hash(str(data2).encode('utf-8'))
     difference_score = get_hash_difference(hash1, hash2)
-    
-    print(f"Matches: {matches}, Fields: {fields}, Difference Score: {difference_score}")
 
     inverse_match_score = 1 - (matches / fields)
     x = (difference_score / 1.5) * inverse_match_score

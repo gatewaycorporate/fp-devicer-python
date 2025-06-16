@@ -6,7 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 [project]
 name = "devicer.py"
-version = "0.1.2"
+version = "0.1.3"
 authors = [
     {name = "Samuel Roux", email = "sam.roux.com@gmail.com"},
     {name = "Stephen Perso", email = "stephenrperso@gmail.com"},
