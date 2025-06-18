@@ -17,7 +17,7 @@ def compare_dictionaries(data1: dict, data2: dict) -> tuple[int, int]:
     for key in data1:
         if key in data2:
             fields += 1
-            if isinstance(data1[key], dict):
+            if isinstance(data1[key], dict) and isinstance(data2[key], dict):
                 sub_matches, sub_fields = compare_dictionaries(data1[key], data2[key])
                 matches += sub_matches
                 fields += sub_fields - 1 # Subtract 1 to avoid double counting the key
