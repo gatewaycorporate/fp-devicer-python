@@ -46,7 +46,7 @@ def calculate_confidence(data1: dict, data2: dict) -> float:
     difference_score = get_hash_difference(hash1, hash2)
 
     inverse_match_score = 1 - (matches / fields)
-    x = (difference_score / 1.5) * inverse_match_score
+    x = difference_score * inverse_match_score
     if (inverse_match_score == 0 or difference_score == 0):
         return 100
     confidence_score = 100 / (1 + math.e ** (-4.5 + (0.25 * x)))
