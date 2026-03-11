@@ -33,7 +33,10 @@ def get_hash(data: Any) -> str:
 
 def compare_hashes(hash1: str, hash2: str) -> int:
     if tlsh is not None:
-        return tlsh.diff(hash1, hash2)
+        try:
+            return tlsh.diff(hash1, hash2)
+        except Exception:
+            pass
     return sum(0 if left == right else 1 for left, right in zip(hash1, hash2)) + abs(len(hash1) - len(hash2))
 
 
