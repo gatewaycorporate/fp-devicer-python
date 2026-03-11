@@ -38,12 +38,6 @@ DEFAULT_WEIGHTS: Dict[str, float] = {
 }
 
 
-def _js_round(value: float) -> int:
-    if value >= 0:
-        return int(value + 0.5)
-    return -int(abs(value) + 0.5)
-
-
 def _default_comparator(a: Any, b: Any, _path: Optional[str] = None) -> float:
     return 1.0 if a == b else 0.0
 
@@ -120,7 +114,7 @@ class ConfidenceCalculator:
             tlsh_score = max(0.0, (tlsh_max_distance - difference) / tlsh_max_distance)
 
         final_score = structural_score * (1.0 - tlsh_weight) + tlsh_score * tlsh_weight
-        return _js_round(max(0.0, min(100.0, final_score * 100.0)))
+        return round(max(0.0, min(100.0, final_score * 100.0)))
 
 
 def create_confidence_calculator(user_options: Optional[ComparisonOptions] = None) -> ConfidenceCalculator:
