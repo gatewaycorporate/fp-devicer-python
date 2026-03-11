@@ -6,7 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 [project]
 name = "devicer.py"
-version = "0.2.0"
+version = "1.5.0"
 authors = [
     {name = "Samuel Roux", email = "sam.roux.com@gmail.com"},
     {name = "Stephen Perso", email = "stephenrperso@gmail.com"},
@@ -24,9 +24,9 @@ classifiers = [
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Software Development :: Libraries"
 ]
 dependencies = [
@@ -41,3 +41,17 @@ license-files = [
 Homepage = "https://gatewaycorporate.org/"
 Repository = "https://github.com/gatewaycorporate/fp-devicer-python.git"
 Issues = "https://github.com/gatewaycorporate/fp-devicer-python/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0", "pytest-asyncio>=0.23.0"]
+postgres = ["psycopg[binary]>=3.1.0"]
+redis = ["redis>=5.0.0"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
